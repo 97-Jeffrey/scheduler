@@ -16,7 +16,7 @@ export default function InterviewerListItem(props) {
         className={InterviewerListItemClass}
         src={props.avatar}
         alt={props.name}
-        selected
+        selected={props.selected}
         onClick={props.setInterviewer}
       />
        {props.selected &&<>{props.name}</>}
