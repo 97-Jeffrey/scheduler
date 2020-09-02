@@ -74,13 +74,13 @@ const appointments = [
   }
 ];
 
-const schedule = appointments.map(appointment=>{
-  return(
-    <Appointment 
-    key={appointment.id}
-    {...appointment}/>
-  )
-})
+// const schedule = appointments.map(appointment=>{
+//   return(
+//     <Appointment 
+//     key={appointment.id}
+//     {...appointment}/>
+//   )
+// })
 
 export default function Application(props) {
   const [day, setDay] = useState('Monday');
@@ -108,7 +108,14 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {schedule}
+        {/* {schedule} */}
+        {appointments.map(appointment=>(
+            <Appointment 
+            key={appointment.id}
+            {...appointment}/>
+          
+        ))}
+        <Appointment key='last' time="5pm"/>
       </section>
     </main>
   );
