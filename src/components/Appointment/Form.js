@@ -3,10 +3,9 @@ import InterviewerList from "components/InterviewerList";
 import Button from "components/Button";
 
 export default function From(props) {
-
+  console.log('these are props passed in:',props.interviewer);
   const [name, setName]= useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
- 
   function reset(){
     setName("");
     setInterviewer(null);
@@ -17,7 +16,7 @@ export default function From(props) {
     props.onCancel();
   }
   
-  function validation(){
+  function saveBoth(){
     props.onSave(name, interviewer)
   }
   return (
@@ -41,7 +40,7 @@ export default function From(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={validation}>Save</Button>
+          <Button confirm onClick={saveBoth}>Save</Button>
         </section>
       </section>
     </main>
