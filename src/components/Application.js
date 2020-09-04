@@ -85,9 +85,15 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     }
-    setState({...state,appointments})
-  }
+    setState({...state,appointments});
+    return axios.delete(`/api/appointments/${id}`, appointments)
+    .then(()=>{
+      setState(prev=>({
+        ...prev, appointments
+      }))
+    })
 
+  } 
   return (
     <main className="layout">
       <section className="sidebar">
