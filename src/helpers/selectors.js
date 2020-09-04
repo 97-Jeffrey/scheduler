@@ -34,8 +34,41 @@ function getInterview(state, interview){
 
 
 
+// function getInterviewersForDay(state, day) {
+//   const interviewersArray = [];
+//   const selectedDay = state.days.filter(stateDay => day === stateDay.name);
+//   if (selectedDay === [] || !day || selectedDay[0] === undefined) {
+//     return [];
+//   }
+  
+//   const selectedAppointmentsId = selectedDay[0].appointments;
+ 
+//   for(const each of selectedAppointmentsId){
+//     if(state.appointments[each].interview){
+//       interviewersArray.push(state.interviewers[state.appointments[each].interview.interviewer])
+//     }
+//   }
+
+//   return interviewersArray;
+// }
+
+function getInterviewersForDay(state, day) {
+  let results = [];
+  for (let dayObj of state.days) {
+    if (day === dayObj.name) {
+      for (let interviewer of dayObj.interviewers) {
+        results.push(state.interviewers[interviewer]);
+      }
+    }
+  }
+  return results;
+}
+
+
+
 
 module.exports={
  getAppointmentsForDay,
- getInterview
+ getInterview,
+ getInterviewersForDay
 }
