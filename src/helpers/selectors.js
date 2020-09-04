@@ -53,15 +53,15 @@ function getInterview(state, interview){
 // }
 
 function getInterviewersForDay(state, day) {
-  let results = [];
+  let interviewArray = [];
   for (let dayObj of state.days) {
     if (day === dayObj.name) {
       for (let interviewer of dayObj.interviewers) {
-        results.push(state.interviewers[interviewer]);
+        interviewArray.push(state.interviewers[interviewer]);
       }
     }
   }
-  return results;
+  return interviewArray;
 }
 
 
