@@ -21,12 +21,18 @@ export function useApplicationData(){
       ...state.appointments,
       [id]: appointment
     };
-    setState({ ...state, appointments });
+    // setState({ ...state, appointments });
 
     return axios.put(`/api/appointments/${id}`, appointment)
       .then(() => {setState(prev => ({
          ...prev, appointments
         }));
+      })
+      .then(()=>{
+        axios.get(`/api/days`)
+        .then( result=>{setState(prev=>({
+          ...prev, days:result.data
+        }))})
       })
   }
 
@@ -39,12 +45,18 @@ export function useApplicationData(){
       ...state.appointments,
       [id]: appointment
     }
-    setState({...state,appointments});
+    // setState({...state,appointments});
     return axios.delete(`/api/appointments/${id}`, appointments)
     .then(()=>{
       setState(prev=>({
         ...prev, appointments
       }))
+    })
+    .then(()=>{
+      axios.get(`/api/days`)
+      .then( result=>{setState(prev=>({
+        ...prev, days:result.data
+      }))})
     })
 
   } 
