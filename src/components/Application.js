@@ -29,7 +29,7 @@ export default function Application(props) {
         id={appointment.id}
         time={appointment.time}
         interview={interview}
-        interviewers={interviewers}
+        interviewers={interviewers.toString()}
         bookInterview={bookInterview}
         cancelInterview={cancelInterview}
       />
