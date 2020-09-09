@@ -21,8 +21,17 @@ export function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
-    // setState({ ...state, appointments });
+    
+    const day={
+      ...state.days.find(someDay=>someDay.appointments.includes(id)),
+      ...state.days[id-1].spots-=1
+    }
+    // const days=[
+    //   ...state.days,
+    //   state.days[state.days.indexOf(day)] = day
 
+    // ]
+    console.log(day);
     return axios.put(`/api/appointments/${id}`, appointment)
       .then(() => {
         setState(prev => ({
