@@ -64,11 +64,16 @@ function getInterviewersForDay(state, day) {
   return interviewArray;
 }
 
-
+ function getSpotsRemaining (state, day) {
+  const noInterviews = getAppointmentsForDay(state, day).filter((appointment) => (!appointment.interview))
+  const spotsRemaining = noInterviews.length;
+  return spotsRemaining;
+}
 
 
 module.exports={
  getAppointmentsForDay,
  getInterview,
- getInterviewersForDay
+ getInterviewersForDay,
+ getSpotsRemaining
 }
