@@ -24,7 +24,6 @@ export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   )
-  // console.log(mode);
 
   function save(name, interviewer) {
     const interview = {
@@ -34,15 +33,14 @@ export default function Appointment(props) {
     transition(SAVING);
     props.bookInterview(props.id, interview)
       .then(() => transition(SHOW))
-      .catch(error => transition(ERROR_SAVE,true))
+      .catch(() => transition(ERROR_SAVE, true))
   }
-
 
   function toDelete() {
     transition(DELETE)
     props.cancelInterview(props.id)
       .then(() => transition(EMPTY))
-      .catch(error => transition(ERROR_DELETE,true))
+      .catch(error => transition(ERROR_DELETE, true))
   }
 
   return (
@@ -91,4 +89,4 @@ export default function Appointment(props) {
         onClose={() => back()} />}
     </article>
   )
-}
+};
