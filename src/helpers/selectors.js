@@ -1,4 +1,4 @@
- function getAppointmentsForDay(state, day) {
+function getAppointmentsForDay(state, day) {
   const appointmentArray = [];
   const selectedDay = state.days.filter(theDay => theDay.name === day);
   if (selectedDay === [] || !day || selectedDay[0] === undefined) {
@@ -14,43 +14,19 @@
   return appointmentArray;
 }
 
-
-function getInterview(state, interview){
-  let interviewObj={}
-  if(!interview || interview === null){
+function getInterview(state, interview) {
+  let interviewObj = {}
+  if (!interview || interview === null) {
     return null;
   }
-
-  for(const interviewer in state.interviewers){
-   if(interviewer == interview.interviewer){
-     interviewObj.student = interview.student;
-     interviewObj.interviewer = state.interviewers[interviewer];
-   }
+  for (const interviewer in state.interviewers) {
+    if (interviewer == interview.interviewer) {
+      interviewObj.student = interview.student;
+      interviewObj.interviewer = state.interviewers[interviewer];
+    }
   }
-  
   return interviewObj;
 }
-
-
-
-
-// function getInterviewersForDay(state, day) {
-//   const interviewersArray = [];
-//   const selectedDay = state.days.filter(stateDay => day === stateDay.name);
-//   if (selectedDay === [] || !day || selectedDay[0] === undefined) {
-//     return [];
-//   }
-  
-//   const selectedAppointmentsId = selectedDay[0].appointments;
- 
-//   for(const each of selectedAppointmentsId){
-//     if(state.appointments[each].interview){
-//       interviewersArray.push(state.interviewers[state.appointments[each].interview.interviewer])
-//     }
-//   }
-
-//   return interviewersArray;
-// }
 
 function getInterviewersForDay(state, day) {
   let interviewArray = [];
@@ -64,16 +40,8 @@ function getInterviewersForDay(state, day) {
   return interviewArray;
 }
 
- function getSpotsRemaining (state, day) {
-  const noInterviews = getAppointmentsForDay(state, day).filter((appointment) => (!appointment.interview))
-  const spotsRemaining = noInterviews.length;
-  return spotsRemaining;
-}
-
-
-module.exports={
- getAppointmentsForDay,
- getInterview,
- getInterviewersForDay,
- getSpotsRemaining
+module.exports = {
+  getAppointmentsForDay,
+  getInterview,
+  getInterviewersForDay
 }
