@@ -7,7 +7,6 @@ export function useApplicationData() {
     days: [],
     appointments: {},
     interviewers: {}
-    
   });
 
   const setDay = day => setState({ ...state, day });
@@ -22,18 +21,7 @@ export function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
-    
-    // const day={
-    //   ...state.days.find(someDay=>someDay.appointments.includes(id)),
-    //   ...state.days[id-1].spots-=1
-    // }
-    
-    // const days=[
-    //   ...state.days,
-    //   state.days[day.id-1] = day
-    // ]
-    // setState({...state, days:days})
-    //  console.log(days);
+
     return axios.put(`/api/appointments/${id}`, appointment)
       .then(() => {
         setState(prev => ({
@@ -59,18 +47,7 @@ export function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     }
-    // const day={
-    //   ...state.days.find(someDay=>someDay.appointments.includes(id)),
-    //   ...state.days[id-1].spots += 1
-    // }
-    // const days=[
-    //   ...state.days,
-    //   state.days[state.days.indexOf(day)] = day
 
-    // ]
-    
-    
-    // setState({...state,appointments});
     return axios.delete(`/api/appointments/${id}`, appointment)
       .then(() => {
         setState(prev => ({
@@ -95,7 +72,6 @@ export function useApplicationData() {
       axios.get(`/api/interviewers`)
     ])
       .then(all => {
-        // console.log(all)
         setState(prev => ({
           ...prev,
           days: all[0].data,
@@ -105,6 +81,6 @@ export function useApplicationData() {
       })
   }, [])
 
-  return { state, setDay, setState, bookInterview, cancelInterview };
+  return { state, setDay, bookInterview, cancelInterview };
 
-}
+};
