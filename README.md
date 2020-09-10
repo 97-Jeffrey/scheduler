@@ -1,5 +1,5 @@
 # Interview Scheduler
-### This is the app that allow people to book interview online with their favoured interviewer.
+### This app allows people to book interview online with their favoured interviewer.
 ## Setup
 
 Install dependencies with `npm install`.
