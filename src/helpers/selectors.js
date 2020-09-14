@@ -1,3 +1,4 @@
+//these functions are to filter interviews/appoimntment infos 
 function getAppointmentsForDay(state, day) {
   const appointmentArray = [];
   const selectedDay = state.days.filter(theDay => theDay.name === day);
