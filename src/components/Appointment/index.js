@@ -9,6 +9,7 @@ import Confirm from "./Confirm";
 import Error from "./Error";
 import useVisualMode from "hooks/useVisualMode";
 
+// these varibales are used as conditions to change interface display
 
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";

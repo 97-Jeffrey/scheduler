@@ -6,7 +6,7 @@ import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "help
 import { useApplicationData } from "hooks/useApplicationData";
 const axios = require('axios');
 
-
+//this is the main component
 export default function Application(props) {
   
   const {
