@@ -27,6 +27,18 @@ npm run storybook
 
 ## Screenshots
 
+Users can create interviews with instructors:
+
+!["this is to browse-to-create"](https://github.com/97-Jeffrey/scheduler/blob/master/docs/browse-to-create.gif?raw=true)
+
+Users can edit existing interviews:
+
+!["this is for edit"](https://github.com/97-Jeffrey/scheduler/blob/master/docs/edit.gif?raw=true)
+
+User can delete existing interviews:
+
+!["this is for delete"](https://github.com/97-Jeffrey/scheduler/blob/master/docs/delete.gif?raw=true)
+
 !["screen shot of applicaiton component"](https://github.com/97-Jeffrey/scheduler/blob/master/docs/application.png?raw=true)
 
 !["screenShots of the customHook"](https://github.com/97-Jeffrey/scheduler/blob/master/docs/customHook.png?raw=true)
