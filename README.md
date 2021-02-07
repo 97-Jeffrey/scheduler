@@ -1,8 +1,11 @@
 # Interview Scheduler
+
 ### This app allows people to book interview online with their favoured interviewer.
+
 ## Setup
 
 Install dependencies with `npm install`.
+This project requires an API server to run. Please visit [scheduler-api](https://github.com/lighthouse-labs/scheduler-api) readme instructions to set up API.
 
 ## Running Webpack Development Server
 
@@ -21,12 +24,11 @@ npm test
 ```sh
 npm run storybook
 ```
+
 ## Screenshots
 
 !["screen shot of applicaiton component"](https://github.com/97-Jeffrey/scheduler/blob/master/docs/application.png?raw=true)
 
 !["screenShots of the customHook"](https://github.com/97-Jeffrey/scheduler/blob/master/docs/customHook.png?raw=true)
 
-!["screenShot of one customHooks"](
-https://github.com/97-Jeffrey/scheduler/blob/master/docs/test.png?raw=true
-)
+!["screenShot of one customHooks"](https://github.com/97-Jeffrey/scheduler/blob/master/docs/test.png?raw=true)
